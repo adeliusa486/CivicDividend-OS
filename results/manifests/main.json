@@ -212,12 +212,15 @@
   "python_full": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
  },
  "experiment_id": "main",
- "finished_at": "2026-09-06T23:13:18+0300",
+ "finished_at": "2026-09-06T23:18:07+0300",
  "git": {
   "branch": "master",
   "describe": "v0-audit-2-g8f6da5f",
-  "dirty": false,
-  "dirty_files": [],
+  "dirty": true,
+  "dirty_files": [
+   "?? MEMORY.md",
+   "?? docs/"
+  ],
   "sha": "8f6da5f95dc498914df4a0e48a45923b0a3341f9",
   "short_sha": "8f6da5f"
  },
@@ -229,7 +232,7 @@
   "results/raw/main.json": "88f9ce25efde40557dc62335830fe6ec7107a300c8f3f1576e63cb0ffd154545",
   "results/raw/main_runs.json": "d039e822ab55cb8ac3e7eb4447a8e1cedf280a9948fd3bc208a2eef2ead2b94a"
  },
- "runtime_seconds": 760.533,
+ "runtime_seconds": 882.686,
  "seeds": [
   0,
   1,
@@ -282,5 +285,5 @@
   48,
   49
  ],
- "started_at": "2026-09-06T23:00:37+0300"
+ "started_at": "2026-09-06T23:03:25+0300"
 }
