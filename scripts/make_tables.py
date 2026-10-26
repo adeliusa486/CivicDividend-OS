@@ -34,7 +34,6 @@ from cdos.utils.manifest import git_state  # noqa: E402
 
 RAW = ROOT / "results" / "raw"
 GEN = ROOT / "paper" / "generated"
-TABLES = ROOT / "tables"
 
 
 def _load(name: str) -> dict[str, Any] | None:
@@ -76,9 +75,8 @@ def _float(rows: str, caption: str, label: str, colspec: str, header: str,
 
 def _write(name: str, text: str, source: str, config_hash: str = "") -> None:
     body = _provenance(source, config_hash) + text
-    for directory in (GEN, TABLES):
-        directory.mkdir(parents=True, exist_ok=True)
-        (directory / name).write_text(body, encoding="utf-8", newline="\n")
+    GEN.mkdir(parents=True, exist_ok=True)
+    (GEN / name).write_text(body, encoding="utf-8", newline="\n")
     print(f"  wrote {name}")
 
 
@@ -248,7 +246,7 @@ def table_sigma_gamma(exp: dict[str, Any]) -> str:
         r"common random numbers, with $\rho = 1-1/\sigma$. The "
         r"$\gamma>\rho$ column records whether the marginal-incidence "
         r"inequality of Proposition~\ref{prop:margin} holds identically. "
-        r"\textbf{Arm B6c's advantage is positive in only four of the eighteen "
+        r"\textbf{Arm B6c's advantage is positive in only five of the eighteen "
         r"cells, and the sign reverses between $\sigma=1.5$ and $\sigma=2.0$ "
         r"at $\gamma=0.85$.} The $\gamma=0.95$ row is a boundary diagnostic: "
         r"near constant returns firm scale becomes explosive and the model is "
@@ -332,7 +330,6 @@ SWEEPS = {
 
 def main() -> int:
     GEN.mkdir(parents=True, exist_ok=True)
-    TABLES.mkdir(parents=True, exist_ok=True)
     print("regenerating tables from results/raw/")
     wrote_any = False
 
@@ -368,7 +365,7 @@ def main() -> int:
     if not wrote_any:
         print("\nno results found. Run `make main` and `make experiments` first.")
         return 1
-    print(f"\ntables written to {GEN} and {TABLES}")
+    print(f"\ntables written to {GEN}")
     return 0
 
 

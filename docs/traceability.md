@@ -35,7 +35,7 @@ Legend: **T** = automated test, **E** = experiment, **—** = not evidenced.
 
 | Claim | Where | Implementation | Test | Experiment | Status |
 |---|---|---|---|---|---|
-| B6c improves output vs B0 | Table VIII | `model/economy.py` | regression suite | **E01, E04** | **CONDITIONAL — holds only for `sigma ≲ 1.7` at `gamma = 0.85`; positive in 4 of 18 cells** |
+| B6c improves output vs B0 | Table VIII | `model/economy.py` | regression suite | **E01, E04** | **CONDITIONAL — holds only for `sigma ≲ 1.7` at `gamma = 0.85`; positive in 5 of 18 cells** |
 | Budget closes in every arm | implicit | `accounting.py` | `test_every_arm_closes_its_books` (14 arms) | E02 | **now verified; it did not before** |
 | Fund reaches ~17% of GDP as a steady state | §V | `fund.py` | `test_f2_condition_fails_at_realised_growth` | E03 | **REFUTED — that is a point on a divergent path** |
 | Arms are "revenue-matched by construction" | §IX | `fiscal.spending_mode` | — | E04 | **was FALSE; now explicit and reported** |

@@ -6,6 +6,33 @@ change what the paper may claim.
 
 ---
 
+## [1.0.1] — 2026-10-26 — sensitivity text corrected; repository tidied
+
+### Scientific Changes
+
+- **Sensitivity text now matches Table XII.** The prose in the sensitivity
+  section quoted an earlier E01 run (+4.78, +3.01, -2.23, -24.99 at
+  `gamma = 0.85`) and said the advantage was positive in four cells. E01 was
+  re-run from the committed code and reproduces the stored results exactly:
+  the values are **+4.56, +2.81, -2.24, -24.79**, and B6c is positive in
+  **five** of eighteen cells (the fifth is `sigma = 2.0, gamma = 0.75`,
+  +1.15%). The sign reversal and the validity region are unchanged. The
+  same count is corrected in the table caption, README and traceability
+  matrix.
+
+### Software Changes
+
+- `make experiments` and `make ablations` pass `--seeds $(EXP_SEEDS)`
+  (default 10), the seed count the published results were run at.
+- Tables and figures are written to `paper/generated/` only; the duplicate
+  `tables/` and `figures/` directories are gone.
+- Removed working files: `HANDOFF.md`, `MEMORY.md`, the one-shot
+  `scripts/revise_*.py` and `scripts/_write_*.py` generators, the smoke-run
+  outputs, and the pre-audit manuscript (still available at tag
+  `v0-audit`).
+
+---
+
 ## [1.0.0] — 2026-09-06 — post-audit remediation
 
 Remediation of the independent audit of 2026-09-06
@@ -31,7 +58,7 @@ These change results and therefore change what may be claimed.
 - **F1 — the headline claim is now conditional.** `sigma` and `gamma` were
   reachable only by editing source, so no sensitivity analysis was ever run.
   E01 sweeps `sigma ∈ {1.2 … 8.0}` × `gamma ∈ {0.75, 0.85, 0.95}`. B6c's output
-  effect is **positive in only 4 of 18 cells** and reverses between `sigma` 1.5
+  effect is **positive in only 5 of 18 cells** and reverses between `sigma` 1.5
   and 2.0 at `gamma = 0.85`. **The dominance claim is withdrawn** and replaced
   by a stated validity region.
 

@@ -56,6 +56,4 @@ jobs:
           name: reproduction
           path: |
             results/
-            figures/
-            tables/
             paper/generated/

@@ -10,8 +10,8 @@ abstract: >-
   factor of production as a contribution base. Includes the corrected testbed
   following the independent audit of 2026-09-06.
 type: software
-version: "1.0.0"
-date-released: "2026-09-06"
+version: "1.0.1"
+date-released: "2026-10-26"
 license: MIT
 keywords:
   - automation taxation

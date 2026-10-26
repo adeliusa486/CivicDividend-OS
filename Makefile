@@ -15,6 +15,9 @@
 PYTHON  ?= python
 PYTEST  ?= $(PYTHON) -m pytest
 SEEDS   ?= 50
+# Seed count the published E and A results were run at; the YAML files
+# record larger targets, which give different numbers from the paper.
+EXP_SEEDS ?= 10
 PAPER   ?= CivicDividendOS_v2
 
 .PHONY: help install test test-fast smoke reproduce experiments ablations \
@@ -45,10 +48,10 @@ main:
 		--out results/raw/main.json --experiment-id main
 
 experiments:
-	$(PYTHON) scripts/run_all_experiments.py --pattern 'E*'
+	$(PYTHON) scripts/run_all_experiments.py --pattern 'E*' --seeds $(EXP_SEEDS)
 
 ablations:
-	$(PYTHON) scripts/run_all_experiments.py --pattern 'A*'
+	$(PYTHON) scripts/run_all_experiments.py --pattern 'A*' --seeds $(EXP_SEEDS)
 
 reproduce: main experiments ablations tables figures
 	@echo "reproduction complete; see results/manifests for provenance"
@@ -74,5 +77,5 @@ clean:
 	find . -name '__pycache__' -type d -prune -exec rm -rf {} +
 
 distclean: clean
-	rm -rf results/raw/*.json results/processed/*.json figures/*.pdf \
-		tables/*.tex paper/generated/*.tex
+	rm -rf results/raw/*.json results/processed/*.json \
+		paper/generated/*.tex paper/generated/*.pdf

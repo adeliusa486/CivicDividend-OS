@@ -44,7 +44,7 @@ the results that follow from taking that seriously:
 This repository is the **post-remediation** state. An independent audit
 (`audit/`, performed 2026-09-06) found three P0 defects in the original work.
 All three have been fixed, and the fixes changed the results. See
-[CHANGELOG.md](CHANGELOG.md) and [MEMORY.md](MEMORY.md) for the full record.
+[CHANGELOG.md](CHANGELOG.md) for the full record.
 
 | Finding | Issue | Status |
 |---|---|---|
@@ -65,14 +65,14 @@ a limited region of the parameter space**:
 
 | Finding | Evidence |
 |---|---|
-| Output advantage is **positive in 4 of 18** cells of the σ×γ grid | E01 |
+| Output advantage is **positive in 5 of 18** cells of the σ×γ grid | E01 |
 | Sign **reverses** between σ = 1.5 and σ = 2.0 at γ = 0.85 | E01 |
 | Sign **reverses with the horizon**: +2.81% at 200 quarters, −2.23% at 320, −11.20% at 400 | E05 |
 | Sign **reverses with the pace of automation**: +2.85% at 0.4%/quarter, −22.45% at 1.5%/quarter | E14 |
 | On revenue per unit of deadweight loss it is **worse** than a fixed robot tax (0.45 vs 1.47) | E04 |
 | A lump-sum-financed variant attains nearly the same output gain (+3.03% vs +3.18%), so most of the advantage is **fiscal stance, not attribution** | E04 |
 | The entire advantage depends on the displacement channel: **+2.81% with it, −1.68% without** | A10 |
-| The wealth fund is **on a divergent path for 13 of 50 seeds** | E03 |
+| The wealth fund is **on a divergent path for 13 of 50 seeds** | Main campaign |
 | Moving to the specified five-factor attribution collapses revenue from 0.873% to **0.081%** of output | E12 |
 
 What *does* survive: Proposition 2's marginal-incidence warning (full cost
@@ -188,7 +188,7 @@ make paper         # compile the manuscript
 To run one experiment:
 
 ```bash
-python scripts/run_experiment.py experiments/E01_sigma_gamma.yaml
+python scripts/run_experiment.py experiments/E01_sigma_gamma.yaml --seeds 10
 ```
 
 To change a parameter without editing any source:
@@ -255,7 +255,7 @@ See [CITATION.cff](CITATION.cff).
 **Author details are not recorded in this repository and require author input.**
 The manuscript's author block, ORCID, affiliation and contact address must be
 supplied before publication; placeholders are not filled in with invented
-identities. See `HANDOFF.md`.
+identities.
 
 ## Licence
 

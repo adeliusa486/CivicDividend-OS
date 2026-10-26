@@ -3,7 +3,7 @@
 This is the anchor for every scientific claim about what changed. If
 ``legacy_mode`` stops reproducing ``simulation/cdos_sim.py`` exactly, then a
 difference has crept in that nobody decided on, and the remediation record in
-MEMORY.md no longer describes the code.
+CHANGELOG.md no longer describes the code.
 
 Tolerances here are exact equality, not ``approx``. Where a corrected result
 legitimately differs, the test says so and says why, rather than being loosened

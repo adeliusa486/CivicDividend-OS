@@ -21,7 +21,7 @@ This is a research repository, so the bar is scientific rather than stylistic.
 
 ## Making a scientific change
 
-Record it in `CHANGELOG.md` and `MEMORY.md` with: the problem, the original
+Record it in `CHANGELOG.md` with: the problem, the original
 behaviour, the new behaviour, the scientific justification, the files changed,
 the tests added, the experiments affected, and the paper sections affected.
 

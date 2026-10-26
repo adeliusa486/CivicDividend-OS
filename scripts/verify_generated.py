@@ -46,14 +46,13 @@ def main(argv=None) -> int:
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_gen = Path(tmp) / "generated"
-        tmp_tables = Path(tmp) / "tables"
         import scripts.make_tables as mt  # noqa: E402
-        original_gen, original_tables = mt.GEN, mt.TABLES
-        mt.GEN, mt.TABLES = tmp_gen, tmp_tables
+        original_gen = mt.GEN
+        mt.GEN = tmp_gen
         try:
             code = mt.main()
         finally:
-            mt.GEN, mt.TABLES = original_gen, original_tables
+            mt.GEN = original_gen
 
         if code != 0:
             print("could not regenerate: no results present")

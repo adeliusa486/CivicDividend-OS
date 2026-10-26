@@ -24,7 +24,6 @@ from cdos.config import load_config  # noqa: E402
 from cdos.model.economy import run  # noqa: E402
 
 RAW = ROOT / "results" / "raw"
-FIG = ROOT / "figures"
 GEN = ROOT / "paper" / "generated"
 
 try:
@@ -47,16 +46,13 @@ def _load(name: str) -> dict[str, Any] | None:
 
 def _write_dat(name: str, points) -> None:
     coords = " ".join(f"({x:.4f},{y:.4f})" for x, y in points)
-    for directory in (FIG, GEN):
-        directory.mkdir(parents=True, exist_ok=True)
-        (directory / name).write_text(coords + "\n", encoding="utf-8", newline="\n")
+    GEN.mkdir(parents=True, exist_ok=True)
+    (GEN / name).write_text(coords + "\n", encoding="utf-8", newline="\n")
 
 
 def _save(fig, name: str) -> None:
-    FIG.mkdir(parents=True, exist_ok=True)
     GEN.mkdir(parents=True, exist_ok=True)
-    for directory in (FIG, GEN):
-        fig.savefig(directory / name, bbox_inches="tight")
+    fig.savefig(GEN / name, bbox_inches="tight")
     plt.close(fig)
     print(f"  wrote {name}")
 
@@ -231,7 +227,7 @@ def main() -> int:
     figure_paths()
     figure_sigma_gamma()
     figure_fund_stability()
-    print(f"\nfigures written to {FIG} and {GEN}")
+    print(f"\nfigures written to {GEN}")
     return 0
 
 
