@@ -32,3 +32,4 @@ desktop.ini
 # Local environment
 .env
 *.local
+/paper
