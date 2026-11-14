@@ -195,44 +195,41 @@
  "config_hash": "f78d37f380de8620",
  "description": "campaign over 14 arms",
  "environment": {
-  "cpu_count": 20,
+  "cpu_count": 12,
   "implementation": "CPython",
   "machine": "AMD64",
   "packages": {
-   "matplotlib": "3.10.9",
+   "matplotlib": null,
    "numpy": "1.26.4",
-   "pandas": "2.3.3",
-   "pytest": "8.4.2",
+   "pandas": null,
+   "pytest": null,
    "pyyaml": "6.0.3",
-   "scipy": "1.17.1"
+   "scipy": null
   },
-  "platform": "Windows-10-10.0.26120-SP0",
-  "processor": "Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "processor": "AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD",
   "python": "3.11.9",
   "python_full": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]"
  },
  "experiment_id": "main",
- "finished_at": "2026-09-06T23:18:07+0300",
+ "finished_at": "2026-11-14T03:23:52+0300",
  "git": {
-  "branch": "master",
-  "describe": "v0-audit-2-g8f6da5f",
-  "dirty": true,
-  "dirty_files": [
-   "?? MEMORY.md",
-   "?? docs/"
-  ],
-  "sha": "8f6da5f95dc498914df4a0e48a45923b0a3341f9",
-  "short_sha": "8f6da5f"
+  "branch": "main",
+  "describe": "v1.0.0-4-g7b76a70",
+  "dirty": false,
+  "dirty_files": [],
+  "sha": "7b76a70df5ac5390f37e5aa192f77d00df97e32f",
+  "short_sha": "7b76a70"
  },
  "inputs": {
-  "C:/Users/adeel/OneDrive/Desktop/4-agents-robots-taxation-financial/configs/base.yaml": "3a99813d0900ed43d2b4059944e27b06d6280aaf4be347d6f5b071ffeb81618a"
+  "C:/Users/Ali Akarma/Documents/GitHub/CivicDividend-OS/configs/base.yaml": "3a99813d0900ed43d2b4059944e27b06d6280aaf4be347d6f5b071ffeb81618a"
  },
  "notes": {},
  "outputs": {
-  "results/raw/main.json": "88f9ce25efde40557dc62335830fe6ec7107a300c8f3f1576e63cb0ffd154545",
-  "results/raw/main_runs.json": "d039e822ab55cb8ac3e7eb4447a8e1cedf280a9948fd3bc208a2eef2ead2b94a"
+  "results/raw/main.json": "8e7ebd8e1a5ab0c4721700832053ff86d1bd995f5d9e437fcf37b67d47742f35",
+  "results/raw/main_runs.json": "25cb6803d9695dbe60434945a502d5318feac44cf2e57932231a762bea379e1e"
  },
- "runtime_seconds": 882.686,
+ "runtime_seconds": 174.974,
  "seeds": [
   0,
   1,
@@ -285,5 +282,5 @@
   48,
   49
  ],
- "started_at": "2026-09-06T23:03:25+0300"
+ "started_at": "2026-11-14T03:20:57+0300"
 }
